@@ -8,5 +8,5 @@ public interface IProduitService {
 	List<Produit> getProduits();
 	void addProduit(Produit p);
 	void updateProduit(Produit p);
-	void deleteProduit(String ref);
+	void deleteProduit(Long id);
 }

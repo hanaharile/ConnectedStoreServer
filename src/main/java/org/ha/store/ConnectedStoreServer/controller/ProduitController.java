@@ -18,11 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-
-@RequestMapping("/api/produit")
-@CrossOrigin
-
-public class ProduitController {
+@RequestMapping("/api/produits")
+@CrossOrigin(origins = "http://localhost:4200")
+public class ProduitController{
+	
 	@Autowired
 	private IProduitService produitService;
 	
@@ -37,11 +36,11 @@ public class ProduitController {
 	
 	@PutMapping
 	public void updateProduit (@RequestBody Produit p){
-		 produitService.updateProduit(p);
+		produitService.updateProduit(p);
 	}
 	
-	@DeleteMapping("/(ref)")
-	public void deleteProduit (@PathVariable String ref){
-		 produitService.deleteProduit(ref);
+	@DeleteMapping(path="/{id}")
+	public void deleteProduit (@PathVariable Long id){
+		 produitService.deleteProduit(id);
 	}
 }

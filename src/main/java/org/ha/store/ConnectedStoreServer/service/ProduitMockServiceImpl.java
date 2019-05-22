@@ -13,12 +13,12 @@ public class ProduitMockServiceImpl implements IProduitService {
 	private List<Produit> produits;
 
 public	ProduitMockServiceImpl()
-	{
+	{ 
 	produits= new ArrayList<Produit>();
-	produits.add(new Produit("PC DELL",10000,13));
-	produits.add(new Produit("PC HP",5000,10));
-	produits.add(new Produit("Samsung A10",10500,13));
-	produits.add(new Produit("OPPO 11",10500,13));
+//	produits.add(new Produit("PC DELL",10000,13));
+//	produits.add(new Produit("PC HP",5000,10));
+//	produits.add(new Produit("Samsung A10",10500,13));
+//	produits.add(new Produit("OPPO 11",10500,13));
 
 	}	
 		
@@ -41,9 +41,9 @@ public	ProduitMockServiceImpl()
 		produits.add(p);	}
 
 	@Override
-	public void deleteProduit(String ref) {
+	public void deleteProduit(Long id) {
 		Produit produit=new Produit();
-		produit.setRef(ref);
+		produit.setId(id);
 		produits.remove(produit)	;
 	}
 

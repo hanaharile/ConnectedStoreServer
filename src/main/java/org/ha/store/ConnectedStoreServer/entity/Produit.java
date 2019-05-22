@@ -1,10 +1,15 @@
 package org.ha.store.ConnectedStoreServer.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Produit {
 
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String ref;
@@ -16,10 +21,10 @@ public class Produit {
 
 	public Produit() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Produit(String ref, double prixUnitaireint ,int quantite) {
+	public Produit(String ref, double prixUnitaire ,int quantite) {
 		super();
 		this.ref = ref;
 		this.prixUnitaire = prixUnitaire;
@@ -47,7 +52,7 @@ public class Produit {
 		return prixUnitaire;
 	}
 
-	public void setPrixUnitaire(float prixUnitaire) {
+	public void setPrixUnitaire(double prixUnitaire) {
 		this.prixUnitaire = prixUnitaire;
 	}
 
