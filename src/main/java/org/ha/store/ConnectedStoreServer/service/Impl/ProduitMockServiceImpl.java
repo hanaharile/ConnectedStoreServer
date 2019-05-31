@@ -1,13 +1,14 @@
-package org.ha.store.ConnectedStoreServer.service;
+package org.ha.store.ConnectedStoreServer.service.Impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.ha.store.ConnectedStoreServer.entity.Produit;
+import org.ha.store.ConnectedStoreServer.service.ICrudService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProduitMockServiceImpl implements IProduitService {
+public class ProduitMockServiceImpl implements ICrudService<Produit,Long> {
 
 	
 	private List<Produit> produits;
@@ -23,25 +24,25 @@ public	ProduitMockServiceImpl()
 	}	
 		
 	@Override
-	public List<Produit> getProduits() {
+	public List<Produit> getAll() {
 		// TODO Auto-generated method stub
 		return produits;
 	}
 
 	@Override
-	public void addProduit(Produit p) {
+	public void add(Produit p) {
 
 		produits.add(p);
 	}
 
 	@Override
-	public void updateProduit(Produit p) {
+	public void update(Produit p) {
 	
 		produits.remove(p);
 		produits.add(p);	}
 
 	@Override
-	public void deleteProduit(Long id) {
+	public void delete(Long id) {
 		Produit produit=new Produit();
 		produit.setId(id);
 		produits.remove(produit)	;

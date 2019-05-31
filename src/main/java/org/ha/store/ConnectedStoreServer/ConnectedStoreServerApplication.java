@@ -8,6 +8,7 @@ import org.ha.store.ConnectedStoreServer.entity.User;
 import org.ha.store.ConnectedStoreServer.repository.ProduitRepository;
 import org.ha.store.ConnectedStoreServer.repository.RoleRepository;
 import org.ha.store.ConnectedStoreServer.repository.UserRepository;
+import org.ha.store.ConnectedStoreServer.util.RoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,8 +37,8 @@ UserRepository userRepository;
 		produitRepository.save(new Produit("souris ",100,112));
 		produitRepository.findAll().forEach(p->{System.out.println(p.getRef());});
 //		
-		Role roleUser = new Role("ROLE_USER");
-		Role roleAdmin = new Role("ROLE_ADMIN");
+		Role roleUser = new Role(RoleEnum.ROLE_USER);
+		Role roleAdmin = new Role(RoleEnum.ROLE_ADMIN);
  		
 		roleRepository.save(roleUser);
 		roleRepository.save(roleAdmin);
