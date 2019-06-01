@@ -25,6 +25,7 @@ public class CrudUserController extends CrudController<User, Long>{
 			return users;
 	}
 	
+	
 	public void add(@RequestBody User user) {
 		Role role = roleRepository.findByName(RoleEnum.ROLE_USER.getName());
 		user.setRoles(Arrays.asList(role));

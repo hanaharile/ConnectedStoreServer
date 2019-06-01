@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class CrudController<T, ID> {
 	
 	@Autowired
-	private ICrudService<T,ID> service;
+	private ICrudService<T, ID> service;
 	
 	@GetMapping
 	public List<T> getAll(){
