@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 
-public class CrudController<T,ID> {
+public class CrudController<T, ID> {
 	
 	@Autowired
 	private ICrudService<T,ID> service;

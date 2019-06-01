@@ -9,5 +9,4 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class ProduitController extends CrudController<Produit, Long> {
 	
-	
 }
