@@ -20,7 +20,6 @@ public class ConnectedStoreServerApplication implements CommandLineRunner{
 ProduitRepository produitRepository;
 @Autowired
 RoleRepository roleRepository;
-
 @Autowired
 UserRepository userRepository;
 
