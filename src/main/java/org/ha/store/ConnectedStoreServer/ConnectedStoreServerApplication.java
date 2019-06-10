@@ -16,8 +16,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ConnectedStoreServerApplication implements CommandLineRunner{
-@Autowired
-ProduitRepository produitRepository;
+//@Autowired
+//ProduitRepository produitRepository;
 @Autowired
 RoleRepository roleRepository;
 @Autowired
@@ -30,11 +30,11 @@ UserRepository userRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
-		produitRepository.save(new Produit("Pc HP",10000,2));
-		produitRepository.save(new Produit("Imprimante66",200,29));
-		produitRepository.save(new Produit("Pc Dell",6000,10));
-		produitRepository.save(new Produit("souris ",100,112));
-		produitRepository.findAll().forEach(p->{System.out.println(p.getRef());});
+//		produitRepository.save(new Produit("sulfate d'aluminium",300,2));
+//		produitRepository.save(new Produit("Imprimante66",200,29));
+//		produitRepository.save(new Produit("Pc Dell",6000,10));
+//		produitRepository.save(new Produit("souris ",100,112));
+//		produitRepository.findAll().forEach(p->{System.out.println(p.getRef());});
 //		
 		Role roleUser = new Role(RoleEnum.ROLE_USER);
 		Role roleAdmin = new Role(RoleEnum.ROLE_ADMIN);
@@ -45,12 +45,12 @@ UserRepository userRepository;
 		roleRepository.findAll().forEach(p->{System.out.println(p.getName());});
 
 		
-		User user = new User("user", "password1", true);
+		User user = new User("user", "password1", "Mohammed","Salah",true);
 		user.setRoles(Arrays.asList(roleUser));
 		
 		userRepository.save(user);
 		
-		User admin = new User("admin", "password2", true);
+		User admin = new User("admin", "password2","Abdel","Chlih", true);
 		admin.setRoles(Arrays.asList(roleUser, roleAdmin));
 		
 		userRepository.save(admin);
