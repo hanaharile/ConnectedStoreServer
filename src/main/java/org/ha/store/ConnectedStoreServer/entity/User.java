@@ -24,7 +24,8 @@ public class User {
 	private String username;
 	
 	private String password;
-	
+	private String firstName;
+	 private String lastName;
 	private boolean enable;
 	
 	@ManyToMany(fetch=FetchType.EAGER)
@@ -58,10 +59,14 @@ public class User {
 		return true;
 	}
 
-	public User(String username, String password, boolean enable) {
+
+
+	public User(String username, String password, String firstName, String lastName, boolean enable) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.enable = enable;
 	}
 
@@ -109,5 +114,22 @@ public class User {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
 	
 }

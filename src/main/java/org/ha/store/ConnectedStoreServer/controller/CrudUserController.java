@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path="/crud_user")
+@RequestMapping(path="/api/crud_user")
 public class CrudUserController extends CrudController<User, Long>{
 	@Autowired
 	private RoleRepository roleRepository;
